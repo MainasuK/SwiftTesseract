@@ -1,0 +1,6 @@
+module Clibtesseract [system] {
+  header "/usr/local/include/tesseract/capi.h"
+  link "tesseract"
+  export *
+}
+

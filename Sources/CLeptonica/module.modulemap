@@ -1,0 +1,6 @@
+module Clibleptonica [system] {
+  header "/usr/local/include/leptonica/allheaders.h"
+  link "leptonica"
+  export *
+}
+
