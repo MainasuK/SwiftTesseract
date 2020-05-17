@@ -1,6 +1,6 @@
 # SwiftTesseract
 
-SwiftPM wrapper for Tesseract.
+SwiftPM wrapper for Tesseract on macOS.
 
 
 ## Setup
