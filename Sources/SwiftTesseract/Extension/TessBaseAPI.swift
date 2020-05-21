@@ -48,6 +48,10 @@ extension TessBaseAPI {
             throw Tesseract.Error.internal(reason: "tesseract recognize failed")
         }
     }
+
+    func setVariable(name: String, value: String) -> Bool {
+        return TessBaseAPISetVariable(raw, name, value) == 1
+    }
     
 }
 

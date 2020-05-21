@@ -25,7 +25,7 @@ public class Tesseract {
 extension Tesseract {
     
     public func init3(datapath: URL? = nil, language: Language) throws {
-        try handle.init3(datapath: datapath, language: language.rawValue)
+        try handle.init3(datapath: datapath, language: language.lang)
     }
     
     public func setImage2(nsImage image: NSImage) throws {
@@ -36,6 +36,11 @@ extension Tesseract {
     public func recognize() throws {
         try handle.recognize()
     }
+    
+    public func setVariable(name: String, value: String) -> Bool {
+        return handle.setVariable(name: name, value: value)
+    }
+
     
     public func resultIterator() -> ResultIterator? {
         return handle.resultIterator()
