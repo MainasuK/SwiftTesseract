@@ -92,12 +92,16 @@ extension SwiftTesseractTests {
     
     func testTesseract_resultIterator() throws {
         let tesseract = Tesseract()
+        let folder = SwiftTesseractTests.urlForRestServicesTestsDir()
         
         // init
-        try tesseract.init3(language: .english)
+        let tessdata = folder
+            .appendingPathComponent("SwiftTesseractTests")
+            .appendingPathComponent("testing")
+            .appendingPathComponent("tessdata")
+        try tesseract.init3(datapath: tessdata, language: .english)
         
         // set image
-        let folder = SwiftTesseractTests.urlForRestServicesTestsDir()
         let imageURL = folder
             .appendingPathComponent("SwiftTesseractTests")
             .appendingPathComponent("testing")

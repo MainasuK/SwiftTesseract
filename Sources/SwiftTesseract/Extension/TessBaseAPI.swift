@@ -28,9 +28,9 @@ class TessBaseAPI {
 
 extension TessBaseAPI {
     
-    func init3(language: String) throws {
+    func init3(datapath: URL?, language: String) throws {
         let lang = (language as NSString).cString(using: String.Encoding.utf8.rawValue)
-        let result = TessBaseAPIInit3(raw, nil, lang)
+        let result = TessBaseAPIInit3(raw, datapath?.path, lang)
         
         guard result == 0 else {
             throw Tesseract.Error.internal(reason: "cannot init tesseract")

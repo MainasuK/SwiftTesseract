@@ -24,8 +24,8 @@ public class Tesseract {
 
 extension Tesseract {
     
-    public func init3(language: Language) throws {
-        try handle.init3(language: language.rawValue)
+    public func init3(datapath: URL? = nil, language: Language) throws {
+        try handle.init3(datapath: datapath, language: language.rawValue)
     }
     
     public func setImage2(nsImage image: NSImage) throws {

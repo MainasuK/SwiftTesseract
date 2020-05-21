@@ -16,13 +16,26 @@ SwiftPM system lib wrapper do not supports version control. Please install the c
 |:---:|:---:|
 |0.1.0|4.1.1|
 
+### Dependencies
+
+- libgif
+- libjpeg
+- liblept
+- libopenjp
+- libpng
+- libtesseract
+- libtiff
+- libwebp
+- libwebpmux
+
 
 ## Usage
 ```swift
     let tesseract = Tesseract()
     
     // init
-    try tesseract.init3(language: .english)
+    let datapath = "path/to/tessdata"
+    try tesseract.init3(datapath: datapath, language: .english)
     
     // set image
     let image = NSImage(contentsOf: imageURL)!
