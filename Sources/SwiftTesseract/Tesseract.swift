@@ -41,6 +41,9 @@ extension Tesseract {
         return handle.setVariable(name: name, value: value)
     }
 
+    public func setPageSegMode(mode: Tesseract.PageSegMode) {
+        handle.setPageSegMode(mode: mode)
+    }
     
     public func resultIterator() -> ResultIterator? {
         return handle.resultIterator()

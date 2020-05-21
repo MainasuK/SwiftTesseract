@@ -53,6 +53,10 @@ extension TessBaseAPI {
         return TessBaseAPISetVariable(raw, name, value) == 1
     }
     
+    func setPageSegMode(mode: Tesseract.PageSegMode) {
+        TessBaseAPISetPageSegMode(raw, mode.raw)
+    }
+    
 }
 
 extension TessBaseAPI {
