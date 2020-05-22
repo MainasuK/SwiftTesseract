@@ -9,7 +9,7 @@ import Foundation
 import Clibtesseract
 
 extension Tesseract {
-    public enum PageIteratorLevel: Int {
+    public enum PageIteratorLevel: Int, CaseIterable {
         case block
         case para
         case textline
@@ -18,6 +18,18 @@ extension Tesseract {
         
         var raw: TessPageIteratorLevel {
             TessPageIteratorLevel(UInt32(self.rawValue))
+        }
+    }
+}
+
+extension Tesseract.PageIteratorLevel {
+    public var text: String {
+        switch self {
+        case .block:        return "Block"
+        case .para:         return "Paragraph"
+        case .textline:     return "Textline"
+        case .word:         return "Word"
+        case .symbol:       return "Symbol"
         }
     }
 }
