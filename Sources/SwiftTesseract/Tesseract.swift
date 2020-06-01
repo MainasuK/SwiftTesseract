@@ -33,6 +33,11 @@ extension Tesseract {
         handle.setImage2(pix: pix)
     }
     
+    public func setRectangle(left: Int, top: Int, width: Int, height: Int) {
+        handle.setRectangle(left: left, top: top, width: width, height: height)
+    }
+
+    
     public func recognize() throws {
         try handle.recognize()
     }

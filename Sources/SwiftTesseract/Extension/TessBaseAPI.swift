@@ -57,6 +57,10 @@ extension TessBaseAPI {
         TessBaseAPISetPageSegMode(raw, mode.raw)
     }
     
+    func setRectangle(left: Int, top: Int, width: Int, height: Int) {
+        TessBaseAPISetRectangle(raw, Int32(left), Int32(top), Int32(width), Int32(height))
+    }
+    
 }
 
 extension TessBaseAPI {
